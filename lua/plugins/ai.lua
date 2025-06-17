@@ -1,4 +1,5 @@
 return {
+    { "CopilotChat.nvim", enabled = false },
     {
         "ravitemer/mcphub.nvim",
         dependencies = {
@@ -9,13 +10,33 @@ return {
             require("mcphub").setup()
         end,
     },
+    -- {
+    --     "deathbeam/CopilotChat.nvim",
+    --     dependencies = {
+    --         { "zbirenbaum/copilot.lua" },
+    --         { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+    --     },
+    --     branch = "tools",
+    -- },
     {
-        "deathbeam/CopilotChat.nvim",
+        "olimorris/codecompanion.nvim",
+        config = function()
+            require("codecompanion").setup({
+                extensions = {
+                    mcphub = {
+                        callback = "mcphub.extensions.codecompanion",
+                        opts = {
+                            show_result_in_chat = true, -- Show mcp tool results in chat
+                            make_vars = true, -- Convert resources to #variables
+                            make_slash_commands = true, -- Add prompts as /slash commands
+                        },
+                    },
+                },
+            })
+        end,
         dependencies = {
-            { "zbirenbaum/copilot.lua" },
-            { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
         },
-        branch = "tools",
-        -- build = "make tiktoken", -- Only on MacOS or Linux
     },
 }
