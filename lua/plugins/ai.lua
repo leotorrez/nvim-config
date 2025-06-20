@@ -10,14 +10,6 @@ return {
             require("mcphub").setup()
         end,
     },
-    -- {
-    --     "deathbeam/CopilotChat.nvim",
-    --     dependencies = {
-    --         { "zbirenbaum/copilot.lua" },
-    --         { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-    --     },
-    --     branch = "tools",
-    -- },
     {
         "olimorris/codecompanion.nvim",
         config = function()
