@@ -6,3 +6,12 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+vim.filetype.add({ extension = { hlsl = "hlsl" } })
+vim.filetype.add({ extension = { uss = "css" } })
+-- vim.filetype.add({ extension = { ini = "ini3dm" } })
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+--     pattern = "*.ini",
+--     callback = function()
+--         vim.cmd("set syntax=dosini")
+--     end,
+-- })

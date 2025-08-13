@@ -1,14 +1,10 @@
 return {
     {
-        "b0o/blender.nvim",
-        config = function()
-            require("blender").setup()
-        end,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "grapp-dev/nui-components.nvim",
-            "mfussenegger/nvim-dap", -- Optional, for debugging with DAP
-            "LiadOz/nvim-dap-repl-highlights", -- Optional, for syntax highlighting in the DAP REPL
+        -- "b0o/blender.nvim",
+        dir = "D:/Githubrepos/blender.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "grapp-dev/nui-components.nvim" },
+        opts = {
+            -- notify={level="DEBUG"},
         },
     },
     {
@@ -17,15 +13,21 @@ return {
         event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
     },
     {
-        "you-n-g/jinja-engine.nvim",
+        "apyra/nvim-unity-sync",
+        ft = "cs",
     },
     {
-        "neovim/nvim-lspconfig",
+        "stevearc/conform.nvim",
         opts = {
-            servers = {
-                pyright = {
-                    mason = false,
-                    autostart = false,
+            -- log_level = vim.log.levels.DEBUG,
+            formatters_by_ft = {
+                dosini = { "iiidmformatter" },
+            },
+            formatters = {
+                iiidmformatter = {
+                    command = "D:/Proyectos/Coding/IIIDMFormatter/main.dist/iiidmformatter.exe",
+                    -- command = "D:/Proyectos/Coding/IIIDMFormatter/iiidmformatter.exe",
+                    stdin = true,
                 },
             },
         },
