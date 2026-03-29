@@ -1,10 +1,13 @@
 return {
+    { "RaafatTurki/hex.nvim" },
     {
+
         -- "b0o/blender.nvim",
         dir = "D:/Githubrepos/blender.nvim",
         dependencies = { "MunifTanjim/nui.nvim", "grapp-dev/nui-components.nvim" },
         opts = {
-            -- notify={level="DEBUG"},
+            -- notify = { enabled = true, verbosity = "DEBUG" },
+            ui = { output_panel = { height = 0.5 } },
         },
     },
     {
@@ -21,14 +24,8 @@ return {
         opts = {
             -- log_level = vim.log.levels.DEBUG,
             formatters_by_ft = {
-                dosini = { "iiidmformatter" },
-            },
-            formatters = {
-                iiidmformatter = {
-                    command = "D:/Proyectos/Coding/IIIDMFormatter/main.dist/iiidmformatter.exe",
-                    -- command = "D:/Proyectos/Coding/IIIDMFormatter/iiidmformatter.exe",
-                    stdin = true,
-                },
+                hlsl = { "clang-format" },
+                python = { "ruff_format", "ruff_fix", "black" },
             },
         },
     },
