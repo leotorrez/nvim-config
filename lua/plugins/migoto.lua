@@ -30,11 +30,16 @@ return {
         "stevearc/conform.nvim",
         opts = {
             formatters_by_ft = {
-                migoto = { "iiidmformatter" },
+                migoto = { "migoto" },
             },
             formatters = {
                 iiidmformatter = {
                     command = "D:/Proyectos/Coding/IIIDMFormatter/main.dist/iiidmformatter.exe",
+                    stdin = true,
+                },
+                migoto = {
+                    command = "topiary",
+                    args = { "format", "--language", "migoto" },
                     stdin = true,
                 },
             },
